@@ -1,0 +1,28 @@
+{
+  "files": {
+    "home.js": "/TestPWA/static/js/home.cb533408.chunk.js",
+    "home.js.map": "/TestPWA/static/js/home.cb533408.chunk.js.map",
+    "main.css": "/TestPWA/static/css/main.c76b4d8d.chunk.css",
+    "main.js": "/TestPWA/static/js/main.935efa1a.chunk.js",
+    "main.js.map": "/TestPWA/static/js/main.935efa1a.chunk.js.map",
+    "mind.css": "/TestPWA/static/css/mind.05049869.chunk.css",
+    "mind.js": "/TestPWA/static/js/mind.db45d68f.chunk.js",
+    "mind.js.map": "/TestPWA/static/js/mind.db45d68f.chunk.js.map",
+    "runtime-main.js": "/TestPWA/static/js/runtime-main.fdfca5ea.js",
+    "runtime-main.js.map": "/TestPWA/static/js/runtime-main.fdfca5ea.js.map",
+    "static/js/4.776a6c2a.chunk.js": "/TestPWA/static/js/4.776a6c2a.chunk.js",
+    "static/js/4.776a6c2a.chunk.js.map": "/TestPWA/static/js/4.776a6c2a.chunk.js.map",
+    "index.html": "/TestPWA/index.html",
+    "precache-manifest.6413b876d44117bd7f2d384bcd94bc19.js": "/TestPWA/precache-manifest.6413b876d44117bd7f2d384bcd94bc19.js",
+    "service-worker.js": "/TestPWA/service-worker.js",
+    "static/css/main.c76b4d8d.chunk.css.map": "/TestPWA/static/css/main.c76b4d8d.chunk.css.map",
+    "static/css/mind.05049869.chunk.css.map": "/TestPWA/static/css/mind.05049869.chunk.css.map",
+    "static/js/4.776a6c2a.chunk.js.LICENSE.txt": "/TestPWA/static/js/4.776a6c2a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fdfca5ea.js",
+    "static/js/4.776a6c2a.chunk.js",
+    "static/css/main.c76b4d8d.chunk.css",
+    "static/js/main.935efa1a.chunk.js"
+  ]
+}
