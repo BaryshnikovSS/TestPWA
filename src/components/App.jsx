@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Loader from "./loader/Loader";
 import Title from "./title/Title";
@@ -42,18 +42,50 @@ function App() {
    * state
    */
   const [menuTitle, setMenuTitle] = useState("Privy");
-  const [hdrDiscription, setHdrDiscription] = useState(
+  const [menuDiscription, setMenuDiscription] = useState(
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
   );
+
+  /**
+   * componentDidMount analog
+   */
+  useEffect(() => {
+    async function fetchData() {
+      const title = navbar[0].title;
+      const description = navbar[0].description;
+
+      dataRecorder({ title, description});
+    }
+    
+    const data = JSON.parse(localStorage.getItem("mainMenu"));
+
+    if (data) {
+      dataRecorder(data);
+    }
+
+    if (!data) {
+      fetchData();
+    }
+  }, []);
+
+  /**
+   * recorder 
+   */
+  function dataRecorder(data) {
+    const { title, description} = data;
+    setMenuTitle(title);
+    setMenuDiscription(description);
+    localStorage.setItem("mainMenu", JSON.stringify(data));
+  }
 
   /**
    * handlers
    */
   function handleClick(e) {
-    setMenuTitle(e.currentTarget.title);
-    setHdrDiscription(
-      navbar.find((el) => el.title === e.currentTarget.title).description
-    );
+    const title = e.currentTarget.title;
+    const description = navbar.find((el) => el.title === e.currentTarget.title).description;
+
+    dataRecorder({ title, description });
   }
 
   /**
@@ -66,14 +98,14 @@ function App() {
 
         <button></button>
 
-        <Title title={menuTitle} description={hdrDiscription}/>
+        <Title title={menuTitle} description={menuDiscription}/>
 
         <Suspense fallback={<Loader />}>
           <Switch>
             <Route exact path="/" component={PrivyPage} />
-            <Route exact path="/mind" component={MindPage} />
             <Route exact path="/mind/emotion" component={EmotionPage} />
             <Route exact path="/mind/brain" component={BrainPage} />
+            <Route exact path="/mind" component={MindPage} />
             <Route exact path="/body" component={BodyPage} />
             <Route exact path="/breath" component={BreathPage} />
             <Route exact path="/more" component={MorePage} />

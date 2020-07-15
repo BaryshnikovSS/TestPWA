@@ -1,7 +1,6 @@
 import React from 'react';
+import SubMenu from '../../../components/subMenu/SubMenu';
 
-const BrainPage = () => (
-    <h1>Brain page!</h1>
-);
+const EmotionPage = ({location}) => (<SubMenu location={location}/>);
 
-export default BrainPage;
+export default EmotionPage;
