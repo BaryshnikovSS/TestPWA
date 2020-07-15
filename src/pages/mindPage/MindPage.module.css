@@ -1,0 +1,24 @@
+.container li {
+  height: 77px;
+  background: linear-gradient(155.26deg, #5574f7 -18.17%, #a38cff 104.39%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  text-align: center;
+}
+
+.container a {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 100%;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.01em;
+
+  color: #ffffff;
+}

@@ -1,0 +1,27 @@
+.container {
+    margin-bottom: 22px;
+}
+
+.title {
+    font-family: Courgette;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #5574F7;
+    margin: 0 0 2px;
+}
+
+.description {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #5574F7;
+    padding: 0 16px;
+}

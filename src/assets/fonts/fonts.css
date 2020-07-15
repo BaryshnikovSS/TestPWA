@@ -1,0 +1,23 @@
+/* Open Sans */
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('./open-sans/OpenSans-Light.ttf');
+  font-style: normal;
+  font-weight: 300;
+}
+
+/* Gotham Pro */
+@font-face {
+  font-family: 'GothamPro-Light';
+  src: url('./gotham-pro/gotham-pro-light.ttf');
+  font-style: normal;
+  font-weight: 300;
+}
+
+/* Playfair Display */
+@font-face {
+  font-family: 'PlayfairDisplay-Regular';
+  src: url('./playfair-display/PlayfairDisplay-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
