@@ -1,25 +1,25 @@
 [{
-        "image": "../../assets/images/icons/navbar/privy.svg",
+        "image": "assets/images/icons/navbar/privy.svg",
         "title": "Privy",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     },
     {
-        "image": "../../assets/images/icons/navbar/mind.svg",
+        "image": "assets/images/icons/navbar/mind.svg",
         "title": "Mind",
         "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam molestiae velit excepturi."
     },
     {
-        "image": "../../assets/images/icons/navbar/body.svg",
+        "image": "assets/images/icons/navbar/body.svg",
         "title": "Body",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, maiores. Natus, ipsam."
     },
     {
-        "image": "../../assets/images/icons/navbar/breath.svg",
+        "image": "assets/images/icons/navbar/breath.svg",
         "title": "Breath",
         "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut reiciendis consectetur aliquid?"
     },
     {
-        "image": "../../assets/images/icons/navbar/more.svg",
+        "image": "assets/images/icons/navbar/more.svg",
         "title": "More",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptatum ea est?"
     }

@@ -1,6 +1,6 @@
 .navigation {
-    background: rgba(25, 34, 68);
-    /* backdrop-filter: blur(10px); */
+    /* background: rgba(25, 34, 68); */
+    /* backdrop-filter: blur(10px);/ */
     position: fixed;
     bottom: 0;
     width: 100vw;
@@ -13,7 +13,7 @@
 
 
 .navigation ul {
-    background: rgba(25, 34, 68, 0.7);
+    background: rgba(25, 34, 68, 0.86);
     backdrop-filter: blur(10px);
     display: flex;
     width: 100%;
@@ -25,10 +25,15 @@
 
 .navigation li {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: calc(100% / 5);
     height: 100%;
+}
+
+.navigation img {
+    padding: 0 0 6px;
 }
 
 .navigation a {

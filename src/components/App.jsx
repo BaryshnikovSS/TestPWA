@@ -5,6 +5,7 @@ import Title from "./title/Title";
 import Nav from "./navbar/Navbar";
 import Context from "../context/context";
 import navbar from "../db/navbar.json";
+import css from './App.module.css'
 
 const PrivyPage = lazy(() =>
   import("../pages/homePage/HomePage" /* webpackChunkName: "home" */)
@@ -92,14 +93,13 @@ function App() {
 
       <div>
 
-        <button></button>
+        <button className={css.button}></button>
 
         <Title title={menuTitle} description={menuDiscription}/>
 
         <Suspense fallback={<Loader />}>
           <Switch>
             <Route exact path="/" component={PrivyPage} />
-            {/* <Route exact path={`${props.match.path}/:category`} component={CategoryPage} /> */}
             <Route exact path="/mind/:category" component={CategoryPage} />
             <Route exact path="/mind" component={MindPage} />
             <Route exact path="/body" component={BodyPage} />
