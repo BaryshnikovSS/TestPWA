@@ -1,33 +1,43 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Context from "../../context/context";
 import Menu from "../../components/menu/Menu";
 import List from "../../components/list-Item/List-Item";
 import css from "./SubMenu.module.css";
 import subMenu from "../../db/subMenu.json";
 
-const SubMenu = ({ location: { state } }) => {
+/**
+ * inline styles
+ */
+const stls = {
+  activeItem: {
+    background: "linear-gradient(94.94deg, #FC9D83 -0.59%, #FFCE00 107.84%)"
+  },
+  activeLink: {
+    color: "#fff"
+  }
+};
+
+/**
+ * component
+ */
+const SubMenu = ({ match }) => {
+  const category = match.params.category;
 
   const { menuTitle } = useContext(Context);
 
   const [list, setList] = useState(null);
 
-  let history = useHistory();
-
+  /**
+   * componentDidMount analog
+   */
   useEffect(() => {
-    async function fetchData(menuTitle, category) {
-      const currentList = await subMenu[menuTitle.toLowerCase()].find(
-        (el) => el.title === category
+    function fetchData(menuTitle, category) {
+      const currentList = subMenu[menuTitle.toLowerCase()].find(
+        (el) => el.title === ucFirst(category)
       ).menu;
 
       dataRecorder(currentList);
-    }
-
-    function getStateIdValidation(state) {
-      if (state === undefined || null) return false;
-      if (Object.getPrototypeOf(state) !== Object.prototype) return false;
-      if (!('category' in state)) return false;
-      return true;
     }
 
     const data = JSON.parse(localStorage.getItem("session"));
@@ -37,22 +47,39 @@ const SubMenu = ({ location: { state } }) => {
     }
 
     if (!data) {
-      if (!getStateIdValidation(state)) return history.push('/');
-      fetchData(menuTitle, state.category);
+      fetchData(menuTitle, category);
     }
-  }, [ menuTitle, history, state ]);
+  }, [menuTitle, category]);
 
+  /**
+   * helpers
+   */
   function dataRecorder(data) {
     setList(data);
     localStorage.setItem("session", JSON.stringify(data));
   }
 
+  function ucFirst(str) {
+    if (!str) return str;
+
+    return str[0].toUpperCase() + str.slice(1);
+  }
+
+  /**
+   * handlers
+   */
   function handleClick(e) {
     const category = e.currentTarget.title;
-    const data = subMenu[menuTitle.toLowerCase()].find((el) => el.title === category).menu;
+    const data = subMenu[menuTitle.toLowerCase()].find(
+      (el) => el.title === ucFirst(category)
+    ).menu;
+    setList(data);
     localStorage.setItem("session", JSON.stringify(data));
   }
 
+  /**
+   * render
+   */
   return (
     <div className={css.container}>
       <div className={css.buttons}>
@@ -61,7 +88,9 @@ const SubMenu = ({ location: { state } }) => {
             <List
               key={idx + el.title}
               name={el.title}
-              path={menuTitle.toLowerCase() + "/" + el.title.toLowerCase()}
+              path={menuTitle + "/" + el.title}
+              cssItem={ucFirst(category) === el.title ? stls.activeItem : {}}
+              cssLink={ucFirst(category) === el.title ? stls.activeLink : {}}
               handleClick={handleClick}
             />
           ))}
@@ -75,4 +104,4 @@ const SubMenu = ({ location: { state } }) => {
   );
 };
 
-export default SubMenu;
+export default withRouter(SubMenu);

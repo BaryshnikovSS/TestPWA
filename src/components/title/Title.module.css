@@ -1,3 +1,7 @@
+.container {
+    margin: 0 0 16px;
+}
+
 .title {
     font-family: Courgette;
     font-style: normal;
@@ -11,7 +15,7 @@
 }
 
 .description {
-    font-family: Gilroy;
+    font-family: Gilroy, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;

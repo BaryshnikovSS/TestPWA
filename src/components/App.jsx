@@ -26,12 +26,8 @@ const MorePage = lazy(() =>
   import("../pages/morePage/MorePage" /* webpackChunkName: "mind" */)
 );
 
-const EmotionPage = lazy(() =>
-  import("../pages/mindPage/emotionPage/EmotionPage" /* webpackChunkName: "mind" */)
-);
-
-const BrainPage = lazy(() =>
-  import("../pages/mindPage/brainPage/BrainPage" /* webpackChunkName: "mind" */)
+const CategoryPage = lazy(() =>
+  import("../pages/categoryPage/CategoryPage" /* webpackChunkName: "mind" */)
 );
 
 /**
@@ -103,8 +99,8 @@ function App() {
         <Suspense fallback={<Loader />}>
           <Switch>
             <Route exact path="/" component={PrivyPage} />
-            <Route exact path="/mind/emotion" component={EmotionPage} />
-            <Route exact path="/mind/brain" component={BrainPage} />
+            {/* <Route exact path={`${props.match.path}/:category`} component={CategoryPage} /> */}
+            <Route exact path="/mind/:category" component={CategoryPage} />
             <Route exact path="/mind" component={MindPage} />
             <Route exact path="/body" component={BodyPage} />
             <Route exact path="/breath" component={BreathPage} />
@@ -113,7 +109,7 @@ function App() {
           </Switch>
         </Suspense>
 
-        <Nav onClick={handleClick} />
+        <Nav title={menuTitle} onClick={handleClick} />
 
       </div>
 
